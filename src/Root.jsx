@@ -1,13 +1,18 @@
 import React, {Component} from 'react';
+import Car from './Compoentns/Car'
+import {data} from "./Mock/data";
 
-
-class App extends Component {
+class Root extends Component {
     render(){
         return(
-            <h1>App Component</h1>
+            <div>
+                {data.map((value)=> <Car name={value.name} desc={value.desc}>
+                    <h1 style={{color: 'red'}}>{value.id}</h1>
+                </Car>)}
+            </div>
         )
     }
 }
 
 
-export default App;
+export default Root;
